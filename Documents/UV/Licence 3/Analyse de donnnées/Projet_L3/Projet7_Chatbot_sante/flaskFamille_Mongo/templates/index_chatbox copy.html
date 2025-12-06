@@ -1,0 +1,186 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<div class="chat-layout">
+
+    <!-- SIDEBAR À DROITE -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="/static/img/sagefemme.png" class="sf-avatar">
+            <h4>{{ session.femme.nom }}</h4>
+            <p class="online">● En ligne</p>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/dashboard">👶 Mes enfants</a></li>
+            <li><a href="/visites">📅 Mes visites</a></li>
+            <li><a href="/rappels">⏰ Rappels</a></li>
+            <li><a href="/profile">⚙️ Paramètres</a></li>
+            <li><a href="/aide">❓ Aide</a></li>
+        </ul>
+    </aside>
+
+    <!-- CHATBOX CENTRALE -->
+    <div class="chat-wrapper">
+        <div class="chat-header">
+            <h2>Ma Sage-Femme</h2>
+            <p class="sub">Assistant virtuel médical</p>
+        </div>
+
+        <div id="chat-box" class="chat-box">
+            <!-- Messages ajoutés ici en JS -->
+
+        </div>
+
+        <!-- Champ de saisie fixe en bas -->
+        <div id="user-input" class="user-input">
+            <input type="text" id="message" placeholder="Écrivez votre question…">
+            <button onclick="sendMessage()">Envoyer</button>
+        </div>
+    </div>
+
+</div>
+<script src="/static/js/script.js"></script>
+{% endblock %}
+
+
+<!-- {% extends "base.html" %}
+{% block title %}Chatbot: Sage femme{% endblock %}
+{% block content %}
+
+<div id="chat-container" class="container">
+    <h2 style="text-align: center;">Ma sage femme</h2>
+    <p class="warning-message">
+        ⚠️ Les réponses générées sont à titre d'information seulement. Veuillez consulter un agent de santé pour des conseils professionnels.
+    </p>
+
+    <div id="chat-box"></div>
+
+    <div id="user-input">
+        <input type="text" id="message" placeholder="Écrivez votre question..." autocomplete="off">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+</div>
+
+<script src="/static/js/script.js"></script>
+{% endblock %}
+
+<!-- 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot Santé</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f5f7;
+        }
+
+        #chat-container {
+            width: 400px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background: #fafafa;
+        }
+
+        .message {
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .user-message {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .user-message .indicator,
+        .bot-message .indicator {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .user-message .indicator {
+            color: #007bff; /* Couleur pour l'utilisateur */
+        }
+
+        .bot-message .indicator {
+            color: #28a745; /* Couleur pour le bot */
+        }
+        
+        .bot-image {
+            width: 30px; /* Ajustez la taille de l'image ici */
+            margin-right: 5px;
+        }
+
+        #user-input {
+            display: flex;
+        }
+
+        #message {
+            flex: 1;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3; /* Couleur au survol */
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-container">
+    <h2>Chatbot Santé</h2>
+
+    <img src="logo.png" alt="Logo" class="logo" style="width: 50px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;" />
+
+    <div id="chat-box">
+        <div class="message user-message">
+            <span class="indicator">Vous</span>
+            <div class="text">Qu'est-ce que je peux faire pendant la grossesse?</div>
+        </div>
+        <div class="message bot-message">
+            <img src="chatbot-icon.png" alt="Chatbot" class="bot-image" /> <!-- Remplacez par votre image de chatbot ->
+            <span class="indicator">Chatbot</span>
+            <div class="text">Il est important de consulter votre médecin régulièrement.</div>
+        </div>
+    </div>
+
+    <div id="user-input">
+        <input type="text" id="message" placeholder="Écrivez votre question..." autocomplete="off">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html> --> -->
