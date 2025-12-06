@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Ajouter enfant{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 shadow">
+            <h2 class="mb-4 text-center">Ajouter un enfant</h2>
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Nom</label>
+                    <input type="text" name="nom" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Genre</label>
+                    <select name="genre" class="form-select" required>
+                        <option value="Mâle">Mâle</option>
+                        <option value="Femelle">Femelle</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date de naissance</label>
+                    <input type="date" name="naissance" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Ajouter</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

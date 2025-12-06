@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>Bienvenue Mme {{ session.femme.nom }} !</h2>
+
+<div class="mt-4">
+    <a href="/enfants/ajouter/{{ session.femme.id }}" class="btn btn-success mb-3">Ajouter un enfant</a>
+</div>
+    <div class="alert alert-info">
+    <h3 class="mt-5"> Toutes les visites  :</h3>
+    <table class="table  table-striped">
+        <thead>
+            <tr>
+                <!-- <th>Mois de Grossesse</th> -->
+                <th>Visite</th>
+                <th>📅 Date de visite</th>
+                <th>⏰ Rappels</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            
+            {% for v in vaccins %}
+            <tr>
+                <!-- <td>{{ v.mois_grossesse }}</td> -->
+                <td>{{ v.description }}</td>
+                <td>{{ v.date_vaccin }}</td>
+                <td>
+                    -7j : {{ v.rappel7 }} <br>
+                    -2j : {{ v.rappel2 }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}
